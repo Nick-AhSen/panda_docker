@@ -67,6 +67,9 @@ RUN apt-get update && \
     ros-melodic-gazebo-ros-control \
     ros-melodic-catkin \
     ros-melodic-usb-cam \
+    ros-melodic-rosbridge-suite \
+    ros-melodic-tf2-web-republisher \
+    python-rosdep \
     python-catkin-tools && \
     rm -rf /var/lib/apt/lists/*
 
