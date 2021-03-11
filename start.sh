@@ -54,7 +54,7 @@ if [ ! -z "${DOCKER_ROBOT_FLAGS}" ]; then
 	ADDITIONAL_FLAGS="${ADDITIONAL_FLAGS} ${DOCKER_ROBOT_FLAGS}"
 fi
 
-IMAGE_NAME=mu_panda_latest
+IMAGE_NAME=panda_melodic_latest
 CONTAINER_NAME=${IMAGE_NAME}_${USER}
 
 echo Using container: $IMAGE_NAME

@@ -47,7 +47,6 @@ RUN git clone --recursive https://github.com/frankaemika/libfranka && \
 # install Panda robot dependencies + any other packages that are needed
 RUN apt-get update && \
     apt-get install -q -y \
-	ros-melodic-franka-ros \
 	ros-melodic-moveit-simple-controller-manager \
 	ros-melodic-joint-trajectory-controller \ 
 	ros-melodic-robot-state-publisher \
