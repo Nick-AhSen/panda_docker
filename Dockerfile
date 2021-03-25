@@ -1,6 +1,14 @@
 # Existing official ROS Melodic/Ubuntu 18.04 docker image
 FROM ros:melodic-ros-core-bionic
 
+
+ARG USER_ID
+ARG GROUP_ID
+
+RUN addgroup --gid $GROUP_ID user
+RUN adduser --disabled-password --gecos '' --uid $USER_ID --gid $GROUP_ID user
+USER user
+
 # Install some useful basics
 RUN apt-get update && \
     apt-get install -y \
@@ -13,6 +21,7 @@ RUN apt-get update && \
       mesa-utils \
       git-all \
       nano \
+      apt-utils \
       && \
     rm -rf /var/lib/apt/lists/*
 
@@ -50,6 +59,7 @@ RUN apt-get update && \
 	ros-melodic-moveit-simple-controller-manager \
 	ros-melodic-joint-trajectory-controller \ 
 	ros-melodic-robot-state-publisher \
+	ros-melodic-moveit \
 	ros-melodic-moveit-planners-ompl \
 	ros-melodic-joint-state-publisher \
 	ros-melodic-moveit-simple-controller-manager \
